@@ -182,7 +182,9 @@ public class SQTextEditorView: UIView {
         _webView.translatesAutoresizingMaskIntoConstraints = false
         _webView.navigationDelegate = self
         _webView.allowsLinkPreview = false
-        _webView.setKeyboardRequiresUserInteraction(false)
+		if autoOpenKeyboard {
+			_webView.setKeyboardRequiresUserInteraction(false)
+		}
         return _webView
     }()
     
@@ -202,11 +204,14 @@ public class SQTextEditorView: UIView {
     }
     
     private var timer: RepeatingTimer?
+	
+	private var autoOpenKeyboard = true
     
     private var customCss: String?
     
-    public init(customCss: String? = nil) {
+	public init(customCss: String? = nil, autoOpenKeyboard: Bool = false) {
         self.customCss = customCss
+		self.autoOpenKeyboard = autoOpenKeyboard
         super.init(frame: .zero)
         setupUI()
         setupEditor()
