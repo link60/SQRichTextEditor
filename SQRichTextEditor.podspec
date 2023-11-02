@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Yuwei Lin' => 'jesse@gamer.com.tw' }
   s.source           = { :git => 'https://github.com/OneupNetwork/SQRichTextEditor.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '14.0'
 
   s.ios.source_files = 'SQRichTextEditor/Classes/*'
   

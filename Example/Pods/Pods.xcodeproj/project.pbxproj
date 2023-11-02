@@ -19,6 +19,9 @@
 		889E5B15239F5643003CAE8A /* editor.css in Resources */ = {isa = PBXBuildFile; fileRef = 889E5B12239F5643003CAE8A /* editor.css */; };
 		889E5B16239F5643003CAE8A /* squire-raw.js in Resources */ = {isa = PBXBuildFile; fileRef = 889E5B13239F5643003CAE8A /* squire-raw.js */; };
 		889E5B18239F8A77003CAE8A /* editor.js in Resources */ = {isa = PBXBuildFile; fileRef = 889E5B17239F8A77003CAE8A /* editor.js */; };
+		95684E092AF2FC83007F5B79 /* RichEditorWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95684E082AF2FC83007F5B79 /* RichEditorWebView.swift */; };
+		95684E0B2AF3023B007F5B79 /* RichEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95684E0A2AF3023B007F5B79 /* RichEditorToolbar.swift */; };
+		95684E0D2AF30311007F5B79 /* RichEditorOptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95684E0C2AF30311007F5B79 /* RichEditorOptionItem.swift */; };
 		BE096B612480F68000A07A96 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE096B5F2480F62500A07A96 /* RepeatingTimer.swift */; };
 		BE21C58724612B8000AA9BA6 /* KeyboardRequiresUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21C58524612A7200AA9BA6 /* KeyboardRequiresUserInteraction.swift */; };
 		D75D3EA4D03B7A25E61C8B802025CD7F /* Pods-SQRichTextEditor_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 544DA90A0B8F791CB55D96F50AC8D154 /* Pods-SQRichTextEditor_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,6 +77,9 @@
 		889E5B13239F5643003CAE8A /* squire-raw.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "squire-raw.js"; sourceTree = "<group>"; };
 		889E5B17239F8A77003CAE8A /* editor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = editor.js; sourceTree = "<group>"; };
 		8D78C1F470F52A9D9E25265215358634 /* SQRichTextEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SQRichTextEditor-dummy.m"; sourceTree = "<group>"; };
+		95684E082AF2FC83007F5B79 /* RichEditorWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorWebView.swift; sourceTree = "<group>"; };
+		95684E0A2AF3023B007F5B79 /* RichEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorToolbar.swift; sourceTree = "<group>"; };
+		95684E0C2AF30311007F5B79 /* RichEditorOptionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorOptionItem.swift; sourceTree = "<group>"; };
 		99BA22336E5AD437191C0A5EA5700185 /* SQRichTextEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SQRichTextEditor.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FDA97369C0142E15AD7500AE38D65CB /* SQRichTextEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SQRichTextEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +184,9 @@
 				BE21C58524612A7200AA9BA6 /* KeyboardRequiresUserInteraction.swift */,
 				8801273F23A727D0001E57E2 /* Helper.swift */,
 				BE096B5F2480F62500A07A96 /* RepeatingTimer.swift */,
+				95684E082AF2FC83007F5B79 /* RichEditorWebView.swift */,
+				95684E0A2AF3023B007F5B79 /* RichEditorToolbar.swift */,
+				95684E0C2AF30311007F5B79 /* RichEditorOptionItem.swift */,
 			);
 			name = Classes;
 			path = SQRichTextEditor/Classes;
@@ -444,8 +453,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE21C58724612B8000AA9BA6 /* KeyboardRequiresUserInteraction.swift in Sources */,
+				95684E0D2AF30311007F5B79 /* RichEditorOptionItem.swift in Sources */,
 				BE096B612480F68000A07A96 /* RepeatingTimer.swift in Sources */,
+				95684E0B2AF3023B007F5B79 /* RichEditorToolbar.swift in Sources */,
 				889E5B0F239F538E003CAE8A /* SQTextEditorView.swift in Sources */,
+				95684E092AF2FC83007F5B79 /* RichEditorWebView.swift in Sources */,
 				418983B1BBC0CC742DFCAB98FA55F49D /* SQRichTextEditor-dummy.m in Sources */,
 				88896FE123A22EFA00701CDD /* SQTextAttribute.swift in Sources */,
 				8801274123A73B03001E57E2 /* Helper.swift in Sources */,
@@ -486,7 +498,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SQRichTextEditor_Tests/Pods-SQRichTextEditor_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SQRichTextEditor_Tests/Pods-SQRichTextEditor_Tests.modulemap";
@@ -521,7 +533,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SQRichTextEditor/SQRichTextEditor-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SQRichTextEditor/SQRichTextEditor-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SQRichTextEditor/SQRichTextEditor.modulemap";
 				PRODUCT_MODULE_NAME = SQRichTextEditor;
@@ -554,7 +566,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SQRichTextEditor_Example/Pods-SQRichTextEditor_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SQRichTextEditor_Example/Pods-SQRichTextEditor_Example.modulemap";
@@ -590,7 +602,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SQRichTextEditor/SQRichTextEditor-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SQRichTextEditor/SQRichTextEditor-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SQRichTextEditor/SQRichTextEditor.modulemap";
 				PRODUCT_MODULE_NAME = SQRichTextEditor;
@@ -654,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -716,7 +728,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -745,7 +757,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SQRichTextEditor_Tests/Pods-SQRichTextEditor_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SQRichTextEditor_Tests/Pods-SQRichTextEditor_Tests.modulemap";
@@ -779,7 +791,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SQRichTextEditor_Example/Pods-SQRichTextEditor_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SQRichTextEditor_Example/Pods-SQRichTextEditor_Example.modulemap";

@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-public protocol SQTextEditorDelegate: class {
+public protocol SQTextEditorDelegate: AnyObject {
     
     /// Called when the editor components is ready.
     func editorDidLoad(_ editor: SQTextEditorView)
@@ -144,8 +144,15 @@ public class SQTextEditorView: UIView {
             }
         }
     }
+	
+	lazy var toolbar: RichEditorToolbar = {
+		let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
+		toolbar.editor = self
+		toolbar.options = RichEditorDefaultOption.all
+		return toolbar
+	}()
     
-    public lazy var webView: WKWebView = {
+    public lazy var webView: RichEditorWebView = {
         let config = WKWebViewConfiguration()
         config.preferences = WKPreferences()
         config.preferences.minimumFontSize = 10
@@ -178,10 +185,11 @@ public class SQTextEditorView: UIView {
             config.userContentController.addUserScript(cssScript)
         }
         
-        let _webView = WKWebView(frame: .zero, configuration: config)
+        let _webView = RichEditorWebView(frame: .zero, configuration: config)
         _webView.translatesAutoresizingMaskIntoConstraints = false
         _webView.navigationDelegate = self
         _webView.allowsLinkPreview = false
+		_webView.accessoryView = self.toolbar
 		if autoOpenKeyboard {
 			_webView.setKeyboardRequiresUserInteraction(false)
 		}
@@ -547,6 +555,7 @@ extension SQTextEditorView: WKScriptMessageHandler {
                         DispatchQueue.main.async {
                             self.selectedTextAttribute.format = format
                             self.delegate?.editor(self, selectedTextAttributeDidChange: self.selectedTextAttribute)
+							self.toolbar.updateToolbar()
                         }
                     }
                     
@@ -557,6 +566,7 @@ extension SQTextEditorView: WKScriptMessageHandler {
                         DispatchQueue.main.async {
                             self.selectedTextAttribute.textInfo = fontInfo
                             self.delegate?.editor(self, selectedTextAttributeDidChange: self.selectedTextAttribute)
+							self.toolbar.updateToolbar()
                         }
                     }
                     
